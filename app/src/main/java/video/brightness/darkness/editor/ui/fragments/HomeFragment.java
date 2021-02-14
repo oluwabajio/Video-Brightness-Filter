@@ -1,4 +1,4 @@
-package video.brightness.darkness.editor;
+package video.brightness.darkness.editor.ui.fragments;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -15,22 +15,20 @@ import androidx.fragment.app.Fragment;
 import ir.androidexception.filepicker.dialog.DirectoryPickerDialog;
 import ir.androidexception.filepicker.interfaces.OnCancelPickerDialogListener;
 import ir.androidexception.filepicker.interfaces.OnConfirmDialogListener;
+import video.brightness.darkness.editor.utils.FilterAdjuster;
+import video.brightness.darkness.editor.utils.MovieWrapperView;
+import video.brightness.darkness.editor.utils.PlayerTimer;
 import video.brightness.darkness.editor.databinding.FragmentHomeBinding;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
-import com.daasuu.gpuv.composer.FillMode;
 import com.daasuu.gpuv.composer.GPUMp4Composer;
-import com.daasuu.gpuv.composer.Rotation;
 import com.daasuu.gpuv.egl.filter.GlBrightnessFilter;
 import com.daasuu.gpuv.egl.filter.GlContrastFilter;
 import com.daasuu.gpuv.egl.filter.GlFilter;
@@ -52,15 +50,11 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.karumi.dexter.listener.single.PermissionListener;
 import com.kbeanie.multipicker.api.Picker;
 import com.kbeanie.multipicker.api.VideoPicker;
 import com.kbeanie.multipicker.api.callbacks.VideoPickerCallback;
-import com.kbeanie.multipicker.api.entity.ChosenImage;
 import com.kbeanie.multipicker.api.entity.ChosenVideo;
 
 import java.io.File;

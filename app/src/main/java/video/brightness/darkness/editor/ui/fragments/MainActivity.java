@@ -1,4 +1,4 @@
-package video.brightness.darkness.editor;
+package video.brightness.darkness.editor.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import com.kbeanie.multipicker.api.VideoPicker;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import video.brightness.darkness.editor.R;
 
 import android.view.View;
 

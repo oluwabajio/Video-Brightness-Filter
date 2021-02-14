@@ -1,4 +1,4 @@
-package video.brightness.darkness.editor;
+package video.brightness.darkness.editor.utils;
 
 import android.os.Handler;
 import android.os.Message;

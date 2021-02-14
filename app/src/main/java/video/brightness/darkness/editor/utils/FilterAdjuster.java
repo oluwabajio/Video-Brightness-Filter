@@ -1,4 +1,4 @@
-package video.brightness.darkness.editor;
+package video.brightness.darkness.editor.utils;
 
 import com.daasuu.gpuv.egl.filter.GlFilter;
 

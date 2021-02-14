@@ -1,11 +1,13 @@
-package video.brightness.darkness.editor;
+package video.brightness.darkness.editor.ui.fragments;
 
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import video.brightness.darkness.editor.utils.FilterAdjuster;
+import video.brightness.darkness.editor.utils.MovieWrapperView;
+import video.brightness.darkness.editor.utils.PlayerTimer;
 import video.brightness.darkness.editor.databinding.FragmentEditBinding;
-import video.brightness.darkness.editor.databinding.FragmentHomeBinding;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -168,15 +170,12 @@ public class EditFragment extends Fragment {
 
 
     private void setUpSimpleExoPlayer() {
-
         TrackSelector trackSelector = new DefaultTrackSelector();
-
         // Measures bandwidth during playback. Can be null if not required.
         DefaultBandwidthMeter defaultBandwidthMeter = new DefaultBandwidthMeter();
         // Produces DataSource instances through which media data is loaded.
         DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(getActivity(), Util.getUserAgent(getActivity(), "yourApplicationName"), defaultBandwidthMeter);
         MediaSource mediaSource = new ExtractorMediaSource.Factory(dataSourceFactory).createMediaSource(Uri.parse(STREAM_URL_MP4_VOD_LONG));
-
         // SimpleExoPlayer
         player = ExoPlayerFactory.newSimpleInstance(getActivity(), trackSelector);
         // Prepare the player with the source.
@@ -202,9 +201,7 @@ public class EditFragment extends Fragment {
             public void onTick(long timeMillis) {
                 long position = player.getCurrentPosition();
                 long duration = player.getDuration();
-
                 if (duration <= 0) return;
-
                 binding.timeSeekBar.setMax((int) duration / 1000);
                 binding.timeSeekBar.setProgress((int) position / 1000);
             }
@@ -221,6 +218,7 @@ public class EditFragment extends Fragment {
         player.release();
         player = null;
     }
+
     private static float range(int percentage, float start, float end) {
         return (end - start) * percentage / 100.0f + start;
     }

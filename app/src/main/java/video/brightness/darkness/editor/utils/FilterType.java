@@ -1,8 +1,6 @@
-package video.brightness.darkness.editor;
+package video.brightness.darkness.editor.utils;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import com.daasuu.gpuv.egl.filter.GlBilateralFilter;
@@ -23,7 +21,6 @@ import com.daasuu.gpuv.egl.filter.GlHazeFilter;
 import com.daasuu.gpuv.egl.filter.GlHighlightShadowFilter;
 import com.daasuu.gpuv.egl.filter.GlHueFilter;
 import com.daasuu.gpuv.egl.filter.GlInvertFilter;
-import com.daasuu.gpuv.egl.filter.GlLookUpTableFilter;
 import com.daasuu.gpuv.egl.filter.GlLuminanceFilter;
 import com.daasuu.gpuv.egl.filter.GlLuminanceThresholdFilter;
 import com.daasuu.gpuv.egl.filter.GlMonochromeFilter;
@@ -41,7 +38,6 @@ import com.daasuu.gpuv.egl.filter.GlToneCurveFilter;
 import com.daasuu.gpuv.egl.filter.GlToneFilter;
 import com.daasuu.gpuv.egl.filter.GlVibranceFilter;
 import com.daasuu.gpuv.egl.filter.GlVignetteFilter;
-import com.daasuu.gpuv.egl.filter.GlWatermarkFilter;
 import com.daasuu.gpuv.egl.filter.GlWeakPixelInclusionFilter;
 import com.daasuu.gpuv.egl.filter.GlWhiteBalanceFilter;
 import com.daasuu.gpuv.egl.filter.GlZoomBlurFilter;

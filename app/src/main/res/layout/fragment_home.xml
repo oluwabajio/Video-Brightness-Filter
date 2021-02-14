@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeFragment">
+    tools:context=".ui.fragments.HomeFragment">
 
     <LinearLayout
         android:id="@+id/lyTop"
@@ -28,7 +28,7 @@
         android:background="#000000"
         android:orientation="vertical">
 
-        <video.brightness.darkness.editor.MovieWrapperView
+        <video.brightness.darkness.editor.utils.MovieWrapperView
             android:id="@+id/layout_movie_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
